@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<JDepend>
+    <Packages>
+
+        <Package name="com.example.webbansach_backend">
+            <Stats>
+                <TotalClasses>2</TotalClasses>
+                <ConcreteClasses>2</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>0</Ca>
+                <Ce>1</Ce>
+                <A>0</A>
+                <I>1</I>
+                <D>0</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="WebbansachBackendApplication.java">
+                    com.example.webbansach_backend.WebbansachBackendApplication
+                </Class>
+                <Class sourceFile="WebbansachBackendApplicationTests.java">
+                    com.example.webbansach_backend.WebbansachBackendApplicationTests
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>java.lang</Package>
+            </DependsUpon>
+
+            <UsedBy>
+            </UsedBy>
+        </Package>
+
+        <Package name="com.example.webbansach_backend.Config">
+            <Stats>
+                <TotalClasses>1</TotalClasses>
+                <ConcreteClasses>1</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>0</Ca>
+                <Ce>6</Ce>
+                <A>0</A>
+                <I>1</I>
+                <D>0</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="MethodRestConfig.java">
+                    com.example.webbansach_backend.Config.MethodRestConfig
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>jakarta.persistence</Package>
+                <Package>jakarta.persistence.metamodel</Package>
+                <Package>java.lang</Package>
+                <Package>java.lang.invoke</Package>
+                <Package>java.util</Package>
+                <Package>java.util.stream</Package>
+            </DependsUpon>
+
+            <UsedBy>
+            </UsedBy>
+        </Package>
+
+        <Package name="com.example.webbansach_backend.Dao">
+            <Stats>
+                <TotalClasses>13</TotalClasses>
+                <ConcreteClasses>0</ConcreteClasses>
+                <AbstractClasses>13</AbstractClasses>
+                <Ca>0</Ca>
+                <Ce>1</Ce>
+                <A>1</A>
+                <I>1</I>
+                <D>1</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+                <Class sourceFile="ChiTietDonHangRepository.java">
+                    com.example.webbansach_backend.Dao.ChiTietDonHangRepository
+                </Class>
+                <Class sourceFile="ChiTietGioHangRepository.java">
+                    com.example.webbansach_backend.Dao.ChiTietGioHangRepository
+                </Class>
+                <Class sourceFile="DonHangRepository.java">
+                    com.example.webbansach_backend.Dao.DonHangRepository
+                </Class>
+                <Class sourceFile="GioHangRepository.java">
+                    com.example.webbansach_backend.Dao.GioHangRepository
+                </Class>
+                <Class sourceFile="HinhAnhRepository.java">
+                    com.example.webbansach_backend.Dao.HinhAnhRepository
+                </Class>
+                <Class sourceFile="HinhThucGiaoHangRepository.java">
+                    com.example.webbansach_backend.Dao.HinhThucGiaoHangRepository
+                </Class>
+                <Class sourceFile="HinhThucThanhToanRepository.java">
+                    com.example.webbansach_backend.Dao.HinhThucThanhToanRepository
+                </Class>
+                <Class sourceFile="NguoiDungRepository.java">
+                    com.example.webbansach_backend.Dao.NguoiDungRepository
+                </Class>
+                <Class sourceFile="QuyenRepository.java">
+                    com.example.webbansach_backend.Dao.QuyenRepository
+                </Class>
+                <Class sourceFile="SachRepository.java">
+                    com.example.webbansach_backend.Dao.SachRepository
+                </Class>
+                <Class sourceFile="SachYeuThichRepository.java">
+                    com.example.webbansach_backend.Dao.SachYeuThichRepository
+                </Class>
+                <Class sourceFile="SuDanhGiaRepository.java">
+                    com.example.webbansach_backend.Dao.SuDanhGiaRepository
+                </Class>
+                <Class sourceFile="TheLoaiRepository.java">
+                    com.example.webbansach_backend.Dao.TheLoaiRepository
+                </Class>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>java.lang</Package>
+            </DependsUpon>
+
+            <UsedBy>
+            </UsedBy>
+        </Package>
+
+        <Package name="com.example.webbansach_backend.Entity">
+            <Stats>
+                <TotalClasses>13</TotalClasses>
+                <ConcreteClasses>13</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>0</Ca>
+                <Ce>4</Ce>
+                <A>0</A>
+                <I>1</I>
+                <D>0</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="ChiTietDonHang.java">
+                    com.example.webbansach_backend.Entity.ChiTietDonHang
+                </Class>
+                <Class sourceFile="ChiTietGioHang.java">
+                    com.example.webbansach_backend.Entity.ChiTietGioHang
+                </Class>
+                <Class sourceFile="DonHang.java">
+                    com.example.webbansach_backend.Entity.DonHang
+                </Class>
+                <Class sourceFile="GioHang.java">
+                    com.example.webbansach_backend.Entity.GioHang
+                </Class>
+                <Class sourceFile="HinhAnh.java">
+                    com.example.webbansach_backend.Entity.HinhAnh
+                </Class>
+                <Class sourceFile="HinhThucGiaoHang.java">
+                    com.example.webbansach_backend.Entity.HinhThucGiaoHang
+                </Class>
+                <Class sourceFile="HinhThucThanhToan.java">
+                    com.example.webbansach_backend.Entity.HinhThucThanhToan
+                </Class>
+                <Class sourceFile="NguoiDung.java">
+                    com.example.webbansach_backend.Entity.NguoiDung
+                </Class>
+                <Class sourceFile="Quyen.java">
+                    com.example.webbansach_backend.Entity.Quyen
+                </Class>
+                <Class sourceFile="Sach.java">
+                    com.example.webbansach_backend.Entity.Sach
+                </Class>
+                <Class sourceFile="SachYeuThich.java">
+                    com.example.webbansach_backend.Entity.SachYeuThich
+                </Class>
+                <Class sourceFile="SuDanhGia.java">
+                    com.example.webbansach_backend.Entity.SuDanhGia
+                </Class>
+                <Class sourceFile="TheLoai.java">
+                    com.example.webbansach_backend.Entity.TheLoai
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>jakarta.persistence</Package>
+                <Package>java.lang</Package>
+                <Package>java.lang.invoke</Package>
+                <Package>java.util</Package>
+            </DependsUpon>
+
+            <UsedBy>
+            </UsedBy>
+        </Package>
+
+        <Package name="jakarta.persistence">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="jakarta.persistence.metamodel">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.lang">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.lang.invoke">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.util">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.util.stream">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+    </Packages>
+
+    <Cycles>
+    </Cycles>
+</JDepend>
