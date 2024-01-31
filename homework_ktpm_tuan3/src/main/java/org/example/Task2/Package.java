@@ -101,19 +101,23 @@ public class Package {
     public String checkPackageOk(){
         if(this.stats != null){
             boolean check = true;
+            String result = "";
             if(this.stats.getCe() >= 0 && this.stats.getCe() > 20){
                 check = false;
+                result += "Ce > 20 \n";
             }
             if(this.stats.getCa() >= 0 && this.stats.getCa() > 500){
                 check = false;
+                result += "Ca > 500 \n";
             }
             if(this.stats.getI() >= 0.75 && this.stats.getI() <= 1){
                 check = false;
+                result += "I >= 0.75 && I <= 1";
             }
             if(check){
                 return "package " + this.getName() +  " is ok!";
             }
-            return "package " + this.getName() +  " is not ok: " + "\n" + this.stats.toString() + "\n";
+            return "package " + this.getName() +  " is not ok: " + "\n" + this.stats.toString() + "\n" + result + "\n\n";
         }
         return "";
     }
