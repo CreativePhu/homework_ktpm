@@ -1,0 +1,1 @@
+## TRONG MỖI PROJECT SẼ CÓ MỘT FILE MÔ TẢ RIÊNG
