@@ -2,7 +2,7 @@
 <JDepend>
     <Packages>
 
-        <Package name="com.example.demoSecurityAPI">
+        <Package name="com.example.demoTuan8Mobile">
             <Stats>
                 <TotalClasses>2</TotalClasses>
                 <ConcreteClasses>2</ConcreteClasses>
@@ -19,11 +19,11 @@
             </AbstractClasses>
 
             <ConcreteClasses>
-                <Class sourceFile="DemoSecurityApiApplication.java">
-                    com.example.demoSecurityAPI.DemoSecurityApiApplication
+                <Class sourceFile="DemoTuan8MobileApplication.java">
+                    com.example.demoTuan8Mobile.DemoTuan8MobileApplication
                 </Class>
-                <Class sourceFile="DemoSecurityApiApplicationTests.java">
-                    com.example.demoSecurityAPI.DemoSecurityApiApplicationTests
+                <Class sourceFile="DemoTuan8MobileApplicationTests.java">
+                    com.example.demoTuan8Mobile.DemoTuan8MobileApplicationTests
                 </Class>
             </ConcreteClasses>
 
@@ -35,39 +35,33 @@
             </UsedBy>
         </Package>
 
-        <Package name="com.example.demoSecurityAPI.Dao">
+        <Package name="com.example.demoTuan8Mobile.Dao">
             <Stats>
-                <TotalClasses>4</TotalClasses>
-                <ConcreteClasses>2</ConcreteClasses>
-                <AbstractClasses>2</AbstractClasses>
-                <Ca>2</Ca>
+                <TotalClasses>2</TotalClasses>
+                <ConcreteClasses>1</ConcreteClasses>
+                <AbstractClasses>1</AbstractClasses>
+                <Ca>1</Ca>
                 <Ce>5</Ce>
                 <A>0.5</A>
-                <I>0.71</I>
-                <D>0.21</D>
+                <I>0.83</I>
+                <D>0.33</D>
                 <V>1</V>
             </Stats>
 
             <AbstractClasses>
-                <Class sourceFile="RoleDaoInf.java">
-                    com.example.demoSecurityAPI.Dao.RoleDaoInf
-                </Class>
-                <Class sourceFile="UserDaoInf.java">
-                    com.example.demoSecurityAPI.Dao.UserDaoInf
+                <Class sourceFile="UserAppInf.java">
+                    com.example.demoTuan8Mobile.Dao.UserAppInf
                 </Class>
             </AbstractClasses>
 
             <ConcreteClasses>
-                <Class sourceFile="RoleDao.java">
-                    com.example.demoSecurityAPI.Dao.RoleDao
-                </Class>
-                <Class sourceFile="UserDao.java">
-                    com.example.demoSecurityAPI.Dao.UserDao
+                <Class sourceFile="UserAppDao.java">
+                    com.example.demoTuan8Mobile.Dao.UserAppDao
                 </Class>
             </ConcreteClasses>
 
             <DependsUpon>
-                <Package>com.example.demoSecurityAPI.Entity</Package>
+                <Package>com.example.demoTuan8Mobile.compoments</Package>
                 <Package>jakarta.persistence</Package>
                 <Package>jakarta.transaction</Package>
                 <Package>java.lang</Package>
@@ -75,55 +69,14 @@
             </DependsUpon>
 
             <UsedBy>
-                <Package>com.example.demoSecurityAPI.Rest</Package>
-                <Package>com.example.demoSecurityAPI.Service</Package>
+                <Package>com.example.demoTuan8Mobile.RestApi</Package>
             </UsedBy>
         </Package>
 
-        <Package name="com.example.demoSecurityAPI.Entity">
+        <Package name="com.example.demoTuan8Mobile.RestApi">
             <Stats>
-                <TotalClasses>2</TotalClasses>
-                <ConcreteClasses>2</ConcreteClasses>
-                <AbstractClasses>0</AbstractClasses>
-                <Ca>4</Ca>
-                <Ce>4</Ce>
-                <A>0</A>
-                <I>0.5</I>
-                <D>0.5</D>
-                <V>1</V>
-            </Stats>
-
-            <AbstractClasses>
-            </AbstractClasses>
-
-            <ConcreteClasses>
-                <Class sourceFile="Roles.java">
-                    com.example.demoSecurityAPI.Entity.Roles
-                </Class>
-                <Class sourceFile="Users.java">
-                    com.example.demoSecurityAPI.Entity.Users
-                </Class>
-            </ConcreteClasses>
-
-            <DependsUpon>
-                <Package>jakarta.persistence</Package>
-                <Package>java.lang</Package>
-                <Package>java.lang.invoke</Package>
-                <Package>java.util</Package>
-            </DependsUpon>
-
-            <UsedBy>
-                <Package>com.example.demoSecurityAPI.Dao</Package>
-                <Package>com.example.demoSecurityAPI.Rest</Package>
-                <Package>com.example.demoSecurityAPI.Security</Package>
-                <Package>com.example.demoSecurityAPI.Service</Package>
-            </UsedBy>
-        </Package>
-
-        <Package name="com.example.demoSecurityAPI.Rest">
-            <Stats>
-                <TotalClasses>2</TotalClasses>
-                <ConcreteClasses>2</ConcreteClasses>
+                <TotalClasses>1</TotalClasses>
+                <ConcreteClasses>1</ConcreteClasses>
                 <AbstractClasses>0</AbstractClasses>
                 <Ca>0</Ca>
                 <Ce>5</Ce>
@@ -137,18 +90,15 @@
             </AbstractClasses>
 
             <ConcreteClasses>
-                <Class sourceFile="RoleController.java">
-                    com.example.demoSecurityAPI.Rest.RoleController
-                </Class>
-                <Class sourceFile="UserController.java">
-                    com.example.demoSecurityAPI.Rest.UserController
+                <Class sourceFile="JobsUser.java">
+                    com.example.demoTuan8Mobile.RestApi.JobsUser
                 </Class>
             </ConcreteClasses>
 
             <DependsUpon>
-                <Package>com.example.demoSecurityAPI.Dao</Package>
-                <Package>com.example.demoSecurityAPI.Entity</Package>
-                <Package>com.example.demoSecurityAPI.Service</Package>
+                <Package>com.example.demoTuan8Mobile.Dao</Package>
+                <Package>com.example.demoTuan8Mobile.compoments</Package>
+                <Package>jakarta.annotation</Package>
                 <Package>java.lang</Package>
                 <Package>java.util</Package>
             </DependsUpon>
@@ -157,83 +107,46 @@
             </UsedBy>
         </Package>
 
-        <Package name="com.example.demoSecurityAPI.Security">
+        <Package name="com.example.demoTuan8Mobile.compoments">
             <Stats>
-                <TotalClasses>3</TotalClasses>
+                <TotalClasses>2</TotalClasses>
                 <ConcreteClasses>2</ConcreteClasses>
-                <AbstractClasses>1</AbstractClasses>
-                <Ca>0</Ca>
-                <Ce>5</Ce>
-                <A>0.33</A>
-                <I>1</I>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>2</Ca>
+                <Ce>4</Ce>
+                <A>0</A>
+                <I>0.67</I>
                 <D>0.33</D>
                 <V>1</V>
             </Stats>
 
             <AbstractClasses>
-                <Class sourceFile="CustomUserDetailService.java">
-                    com.example.demoSecurityAPI.Security.CustomUserDetailService
-                </Class>
             </AbstractClasses>
 
             <ConcreteClasses>
-                <Class sourceFile="CustomUserDetail.java">
-                    com.example.demoSecurityAPI.Security.CustomUserDetail
+                <Class sourceFile="Jobs.java">
+                    com.example.demoTuan8Mobile.compoments.Jobs
                 </Class>
-                <Class sourceFile="SecurityRequest.java">
-                    com.example.demoSecurityAPI.Security.SecurityRequest
+                <Class sourceFile="UserApp.java">
+                    com.example.demoTuan8Mobile.compoments.UserApp
                 </Class>
             </ConcreteClasses>
 
             <DependsUpon>
-                <Package>com.example.demoSecurityAPI.Entity</Package>
-                <Package>com.example.demoSecurityAPI.Service</Package>
+                <Package>jakarta.persistence</Package>
                 <Package>java.lang</Package>
                 <Package>java.lang.invoke</Package>
                 <Package>java.util</Package>
             </DependsUpon>
 
             <UsedBy>
+                <Package>com.example.demoTuan8Mobile.Dao</Package>
+                <Package>com.example.demoTuan8Mobile.RestApi</Package>
             </UsedBy>
         </Package>
 
-        <Package name="com.example.demoSecurityAPI.Service">
-            <Stats>
-                <TotalClasses>2</TotalClasses>
-                <ConcreteClasses>1</ConcreteClasses>
-                <AbstractClasses>1</AbstractClasses>
-                <Ca>2</Ca>
-                <Ce>5</Ce>
-                <A>0.5</A>
-                <I>0.71</I>
-                <D>0.21</D>
-                <V>1</V>
-            </Stats>
-
-            <AbstractClasses>
-                <Class sourceFile="UserServiceInf.java">
-                    com.example.demoSecurityAPI.Service.UserServiceInf
-                </Class>
-            </AbstractClasses>
-
-            <ConcreteClasses>
-                <Class sourceFile="UserService.java">
-                    com.example.demoSecurityAPI.Service.UserService
-                </Class>
-            </ConcreteClasses>
-
-            <DependsUpon>
-                <Package>com.example.demoSecurityAPI.Dao</Package>
-                <Package>com.example.demoSecurityAPI.Entity</Package>
-                <Package>jakarta.transaction</Package>
-                <Package>java.lang</Package>
-                <Package>java.util</Package>
-            </DependsUpon>
-
-            <UsedBy>
-                <Package>com.example.demoSecurityAPI.Rest</Package>
-                <Package>com.example.demoSecurityAPI.Security</Package>
-            </UsedBy>
+        <Package name="jakarta.annotation">
+            <error>No stats available: package referenced, but not analyzed.</error>
         </Package>
 
         <Package name="jakarta.persistence">

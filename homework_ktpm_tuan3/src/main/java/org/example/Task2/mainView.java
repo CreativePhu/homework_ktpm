@@ -110,6 +110,7 @@ public class mainView extends JFrame {
         btnKimTraCu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
+                    textArea.setText("");
                     checkFormartProject();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
