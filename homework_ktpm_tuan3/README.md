@@ -1,4 +1,15 @@
+## TASK1 <br>
+
+## -- demo run Drivers <br>
+
+![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan3/src/main/java/org/example/Task1/images/demo_Drivers.png?raw=true)<br>
+
+## -- demo run MetricsFilterTest <br>
+
+![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan3/src/main/java/org/example/Task1/images/demo_MetricsFilterTest.png?raw=true)<br>
+
 ## TASK2 -- TẠO RA FILE XML ĐƯỢC THỐNG KÊ TỪ PROJECT VÀ TẠO BÁO CÁO TỪ FILE XML ĐÓ <br>
+
 1. Tạo class package chứa các thông tin về package khi được đọc từ file xml<br>
    ![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan3/src/main/java/org/example/Task2/images/class_package.png?raw=true)<br>
 2. Hàm kiểm tra một đối tượng package có ok hay không thông qua các thống kê có sẵn<br>
