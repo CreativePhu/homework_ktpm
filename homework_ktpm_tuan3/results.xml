@@ -2,7 +2,7 @@
 <JDepend>
     <Packages>
 
-        <Package name="com.example.webbansach_backend">
+        <Package name="com.example.demoSecurityAPI">
             <Stats>
                 <TotalClasses>2</TotalClasses>
                 <ConcreteClasses>2</ConcreteClasses>
@@ -19,11 +19,11 @@
             </AbstractClasses>
 
             <ConcreteClasses>
-                <Class sourceFile="WebbansachBackendApplication.java">
-                    com.example.webbansach_backend.WebbansachBackendApplication
+                <Class sourceFile="DemoSecurityApiApplication.java">
+                    com.example.demoSecurityAPI.DemoSecurityApiApplication
                 </Class>
-                <Class sourceFile="WebbansachBackendApplicationTests.java">
-                    com.example.webbansach_backend.WebbansachBackendApplicationTests
+                <Class sourceFile="DemoSecurityApiApplicationTests.java">
+                    com.example.demoSecurityAPI.DemoSecurityApiApplicationTests
                 </Class>
             </ConcreteClasses>
 
@@ -35,117 +35,61 @@
             </UsedBy>
         </Package>
 
-        <Package name="com.example.webbansach_backend.Config">
+        <Package name="com.example.demoSecurityAPI.Dao">
             <Stats>
-                <TotalClasses>1</TotalClasses>
-                <ConcreteClasses>1</ConcreteClasses>
-                <AbstractClasses>0</AbstractClasses>
-                <Ca>0</Ca>
-                <Ce>6</Ce>
-                <A>0</A>
-                <I>1</I>
-                <D>0</D>
+                <TotalClasses>4</TotalClasses>
+                <ConcreteClasses>2</ConcreteClasses>
+                <AbstractClasses>2</AbstractClasses>
+                <Ca>2</Ca>
+                <Ce>5</Ce>
+                <A>0.5</A>
+                <I>0.71</I>
+                <D>0.21</D>
                 <V>1</V>
             </Stats>
 
             <AbstractClasses>
+                <Class sourceFile="RoleDaoInf.java">
+                    com.example.demoSecurityAPI.Dao.RoleDaoInf
+                </Class>
+                <Class sourceFile="UserDaoInf.java">
+                    com.example.demoSecurityAPI.Dao.UserDaoInf
+                </Class>
             </AbstractClasses>
 
             <ConcreteClasses>
-                <Class sourceFile="MethodRestConfig.java">
-                    com.example.webbansach_backend.Config.MethodRestConfig
+                <Class sourceFile="RoleDao.java">
+                    com.example.demoSecurityAPI.Dao.RoleDao
+                </Class>
+                <Class sourceFile="UserDao.java">
+                    com.example.demoSecurityAPI.Dao.UserDao
                 </Class>
             </ConcreteClasses>
 
             <DependsUpon>
+                <Package>com.example.demoSecurityAPI.Entity</Package>
                 <Package>jakarta.persistence</Package>
-                <Package>jakarta.persistence.metamodel</Package>
+                <Package>jakarta.transaction</Package>
                 <Package>java.lang</Package>
-                <Package>java.lang.invoke</Package>
                 <Package>java.util</Package>
-                <Package>java.util.stream</Package>
             </DependsUpon>
 
             <UsedBy>
+                <Package>com.example.demoSecurityAPI.Rest</Package>
+                <Package>com.example.demoSecurityAPI.Service</Package>
             </UsedBy>
         </Package>
 
-        <Package name="com.example.webbansach_backend.Dao">
+        <Package name="com.example.demoSecurityAPI.Entity">
             <Stats>
-                <TotalClasses>13</TotalClasses>
-                <ConcreteClasses>0</ConcreteClasses>
-                <AbstractClasses>13</AbstractClasses>
-                <Ca>0</Ca>
-                <Ce>1</Ce>
-                <A>1</A>
-                <I>1</I>
-                <D>1</D>
-                <V>1</V>
-            </Stats>
-
-            <AbstractClasses>
-                <Class sourceFile="ChiTietDonHangRepository.java">
-                    com.example.webbansach_backend.Dao.ChiTietDonHangRepository
-                </Class>
-                <Class sourceFile="ChiTietGioHangRepository.java">
-                    com.example.webbansach_backend.Dao.ChiTietGioHangRepository
-                </Class>
-                <Class sourceFile="DonHangRepository.java">
-                    com.example.webbansach_backend.Dao.DonHangRepository
-                </Class>
-                <Class sourceFile="GioHangRepository.java">
-                    com.example.webbansach_backend.Dao.GioHangRepository
-                </Class>
-                <Class sourceFile="HinhAnhRepository.java">
-                    com.example.webbansach_backend.Dao.HinhAnhRepository
-                </Class>
-                <Class sourceFile="HinhThucGiaoHangRepository.java">
-                    com.example.webbansach_backend.Dao.HinhThucGiaoHangRepository
-                </Class>
-                <Class sourceFile="HinhThucThanhToanRepository.java">
-                    com.example.webbansach_backend.Dao.HinhThucThanhToanRepository
-                </Class>
-                <Class sourceFile="NguoiDungRepository.java">
-                    com.example.webbansach_backend.Dao.NguoiDungRepository
-                </Class>
-                <Class sourceFile="QuyenRepository.java">
-                    com.example.webbansach_backend.Dao.QuyenRepository
-                </Class>
-                <Class sourceFile="SachRepository.java">
-                    com.example.webbansach_backend.Dao.SachRepository
-                </Class>
-                <Class sourceFile="SachYeuThichRepository.java">
-                    com.example.webbansach_backend.Dao.SachYeuThichRepository
-                </Class>
-                <Class sourceFile="SuDanhGiaRepository.java">
-                    com.example.webbansach_backend.Dao.SuDanhGiaRepository
-                </Class>
-                <Class sourceFile="TheLoaiRepository.java">
-                    com.example.webbansach_backend.Dao.TheLoaiRepository
-                </Class>
-            </AbstractClasses>
-
-            <ConcreteClasses>
-            </ConcreteClasses>
-
-            <DependsUpon>
-                <Package>java.lang</Package>
-            </DependsUpon>
-
-            <UsedBy>
-            </UsedBy>
-        </Package>
-
-        <Package name="com.example.webbansach_backend.Entity">
-            <Stats>
-                <TotalClasses>13</TotalClasses>
-                <ConcreteClasses>13</ConcreteClasses>
+                <TotalClasses>2</TotalClasses>
+                <ConcreteClasses>2</ConcreteClasses>
                 <AbstractClasses>0</AbstractClasses>
-                <Ca>0</Ca>
+                <Ca>4</Ca>
                 <Ce>4</Ce>
                 <A>0</A>
-                <I>1</I>
-                <D>0</D>
+                <I>0.5</I>
+                <D>0.5</D>
                 <V>1</V>
             </Stats>
 
@@ -153,44 +97,11 @@
             </AbstractClasses>
 
             <ConcreteClasses>
-                <Class sourceFile="ChiTietDonHang.java">
-                    com.example.webbansach_backend.Entity.ChiTietDonHang
+                <Class sourceFile="Roles.java">
+                    com.example.demoSecurityAPI.Entity.Roles
                 </Class>
-                <Class sourceFile="ChiTietGioHang.java">
-                    com.example.webbansach_backend.Entity.ChiTietGioHang
-                </Class>
-                <Class sourceFile="DonHang.java">
-                    com.example.webbansach_backend.Entity.DonHang
-                </Class>
-                <Class sourceFile="GioHang.java">
-                    com.example.webbansach_backend.Entity.GioHang
-                </Class>
-                <Class sourceFile="HinhAnh.java">
-                    com.example.webbansach_backend.Entity.HinhAnh
-                </Class>
-                <Class sourceFile="HinhThucGiaoHang.java">
-                    com.example.webbansach_backend.Entity.HinhThucGiaoHang
-                </Class>
-                <Class sourceFile="HinhThucThanhToan.java">
-                    com.example.webbansach_backend.Entity.HinhThucThanhToan
-                </Class>
-                <Class sourceFile="NguoiDung.java">
-                    com.example.webbansach_backend.Entity.NguoiDung
-                </Class>
-                <Class sourceFile="Quyen.java">
-                    com.example.webbansach_backend.Entity.Quyen
-                </Class>
-                <Class sourceFile="Sach.java">
-                    com.example.webbansach_backend.Entity.Sach
-                </Class>
-                <Class sourceFile="SachYeuThich.java">
-                    com.example.webbansach_backend.Entity.SachYeuThich
-                </Class>
-                <Class sourceFile="SuDanhGia.java">
-                    com.example.webbansach_backend.Entity.SuDanhGia
-                </Class>
-                <Class sourceFile="TheLoai.java">
-                    com.example.webbansach_backend.Entity.TheLoai
+                <Class sourceFile="Users.java">
+                    com.example.demoSecurityAPI.Entity.Users
                 </Class>
             </ConcreteClasses>
 
@@ -202,6 +113,126 @@
             </DependsUpon>
 
             <UsedBy>
+                <Package>com.example.demoSecurityAPI.Dao</Package>
+                <Package>com.example.demoSecurityAPI.Rest</Package>
+                <Package>com.example.demoSecurityAPI.Security</Package>
+                <Package>com.example.demoSecurityAPI.Service</Package>
+            </UsedBy>
+        </Package>
+
+        <Package name="com.example.demoSecurityAPI.Rest">
+            <Stats>
+                <TotalClasses>2</TotalClasses>
+                <ConcreteClasses>2</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>0</Ca>
+                <Ce>5</Ce>
+                <A>0</A>
+                <I>1</I>
+                <D>0</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="RoleController.java">
+                    com.example.demoSecurityAPI.Rest.RoleController
+                </Class>
+                <Class sourceFile="UserController.java">
+                    com.example.demoSecurityAPI.Rest.UserController
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>com.example.demoSecurityAPI.Dao</Package>
+                <Package>com.example.demoSecurityAPI.Entity</Package>
+                <Package>com.example.demoSecurityAPI.Service</Package>
+                <Package>java.lang</Package>
+                <Package>java.util</Package>
+            </DependsUpon>
+
+            <UsedBy>
+            </UsedBy>
+        </Package>
+
+        <Package name="com.example.demoSecurityAPI.Security">
+            <Stats>
+                <TotalClasses>3</TotalClasses>
+                <ConcreteClasses>2</ConcreteClasses>
+                <AbstractClasses>1</AbstractClasses>
+                <Ca>0</Ca>
+                <Ce>5</Ce>
+                <A>0.33</A>
+                <I>1</I>
+                <D>0.33</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+                <Class sourceFile="CustomUserDetailService.java">
+                    com.example.demoSecurityAPI.Security.CustomUserDetailService
+                </Class>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="CustomUserDetail.java">
+                    com.example.demoSecurityAPI.Security.CustomUserDetail
+                </Class>
+                <Class sourceFile="SecurityRequest.java">
+                    com.example.demoSecurityAPI.Security.SecurityRequest
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>com.example.demoSecurityAPI.Entity</Package>
+                <Package>com.example.demoSecurityAPI.Service</Package>
+                <Package>java.lang</Package>
+                <Package>java.lang.invoke</Package>
+                <Package>java.util</Package>
+            </DependsUpon>
+
+            <UsedBy>
+            </UsedBy>
+        </Package>
+
+        <Package name="com.example.demoSecurityAPI.Service">
+            <Stats>
+                <TotalClasses>2</TotalClasses>
+                <ConcreteClasses>1</ConcreteClasses>
+                <AbstractClasses>1</AbstractClasses>
+                <Ca>2</Ca>
+                <Ce>5</Ce>
+                <A>0.5</A>
+                <I>0.71</I>
+                <D>0.21</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+                <Class sourceFile="UserServiceInf.java">
+                    com.example.demoSecurityAPI.Service.UserServiceInf
+                </Class>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="UserService.java">
+                    com.example.demoSecurityAPI.Service.UserService
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>com.example.demoSecurityAPI.Dao</Package>
+                <Package>com.example.demoSecurityAPI.Entity</Package>
+                <Package>jakarta.transaction</Package>
+                <Package>java.lang</Package>
+                <Package>java.util</Package>
+            </DependsUpon>
+
+            <UsedBy>
+                <Package>com.example.demoSecurityAPI.Rest</Package>
+                <Package>com.example.demoSecurityAPI.Security</Package>
             </UsedBy>
         </Package>
 
@@ -209,7 +240,7 @@
             <error>No stats available: package referenced, but not analyzed.</error>
         </Package>
 
-        <Package name="jakarta.persistence.metamodel">
+        <Package name="jakarta.transaction">
             <error>No stats available: package referenced, but not analyzed.</error>
         </Package>
 
@@ -222,10 +253,6 @@
         </Package>
 
         <Package name="java.util">
-            <error>No stats available: package referenced, but not analyzed.</error>
-        </Package>
-
-        <Package name="java.util.stream">
             <error>No stats available: package referenced, but not analyzed.</error>
         </Package>
     </Packages>

@@ -58,8 +58,6 @@ public class mainView extends JFrame {
             jdepend.xmlui.JDepend xml = new jdepend.xmlui.JDepend(out);
             xml.addDirectory(file.getAbsolutePath());
             PackageFilter f = PackageFilter.all();
-            // f.including("vn.edu.iuh");
-            f.accept("vn.edu");
             f.excluding("org");
             xml.setFilter(f);
             xml.analyze();
