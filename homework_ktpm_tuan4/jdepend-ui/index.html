@@ -1,0 +1,258 @@
+<html>
+  <head>
+  <style>
+    body {
+      font-family: Verdana, sans-serif;
+    }
+
+    #title {
+      text-align: center;
+    }
+
+    #package-name {
+      width: 300px;
+    }
+
+    #main-report {
+      width: 700px;
+      height:700px;
+      border-bottom: 2px solid black;
+      border-left: 2px solid black;
+      position: absolute;
+      left: 100px;
+      top: 100px;
+      background-color: #EEE;
+      border-top: 5px solid #EEE;
+      border-right: 5px solid #EEE;
+    }
+
+    #main-report:after{
+      content:"Main Sequence";
+      text-align: center;
+      color: red;
+      position:absolute;
+      border-top:2px solid red;
+      width:990px;
+      transform: rotate(45deg);
+      transform-origin: 0% 0%;
+    }
+
+    #zone-of-pain {
+      position: absolute;
+      top: 750px;
+      left:150px;
+      z-index:50;
+    }
+
+    #zone-of-uselessness {
+      position: absolute;
+      top: 150px;
+      left:600px;
+      z-index:50;
+    }
+
+    #A {
+      left: 50px;
+      top:350px;
+    }
+
+    #I {
+      left: 350px;
+      top:750px;
+    }
+
+    #A,#I {
+      position: absolute;
+      font-weight: bold;
+      font-size: 26px;
+    }
+
+    .point {
+      position: absolute;
+      border: 5px solid darkblue;
+      z-index: 98;
+      border-radius: 50%;
+    }
+
+    [data-tooltip]:before {
+    /* needed - do not touch */
+    content: attr(data-tooltip);
+    position: absolute;
+    opacity: 0;
+
+    /* customizable */
+    transition: all 0.15s ease;
+    padding: 10px;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px silver;
+  }
+
+  [data-tooltip]:hover:before {
+      /* needed - do not touch */
+      opacity: 1;
+
+      /* customizable */
+      background: lightgrey;
+      z-index:99;
+      margin-top: -50px;
+      margin-left: 20px;
+  }
+
+  [data-tooltip]:not([data-tooltip-persistent]):before {
+      pointer-events: none;
+  }
+
+  #details {
+    position: absolute;
+    left: 900px;
+  }
+
+  #average,#median {
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+
+  </style>
+  </head>
+  <body>
+    <h1 id="title">Distance from main sequence</h1>
+    <div id="zone-of-pain">Zone of Pain</div>
+    <div id="zone-of-uselessness">Zone of Uselessness</div>
+    <div id="A">A</div>
+    <div id="main-report">
+    <div id="I">I</div>
+    </div>
+    <div id="details">
+      <h1>Details</h1>
+      <div id="generic-info">
+      <h2>General</h2>
+        <p>Average distance from Main Sequence: <span id="average"></span></p>
+        <p>Median distance from Main Sequence: <span id="median"></span></p>
+      </div>
+      <hr>
+      <div id="package-search">
+        <label for="package-name">Package Search: </label>
+        <input id="package-name" onkeydown="search(this)" placeholder="Type part of a package name and press enter...">
+      </div>
+      <div id="package-info">
+        <h2>Package</h2>
+        <p>Click on the dots or search for a package to see details...</p>
+      </div>
+    </div>
+  </body>
+  <script>
+
+        const points = [{"@_attrs":{"@_name":"be.quodlibet.boxable"},"Stats":{"TotalClasses":15,"ConcreteClasses":12,"AbstractClasses":3,"Ca":1,"Ce":18,"A":0.2,"I":0.95,"D":0.15,"V":1},"AbstractClasses":{"Class":[{"#text":"be.quodlibet.boxable.AbstractPageTemplate","@_attrs":{"@_sourceFile":"AbstractPageTemplate.java"}},{"#text":"be.quodlibet.boxable.AbstractTemplatedTable","@_attrs":{"@_sourceFile":"AbstractTemplatedTable.java"}},{"#text":"be.quodlibet.boxable.Table","@_attrs":{"@_sourceFile":"Table.java"}}]},"ConcreteClasses":{"Class":[{"#text":"be.quodlibet.boxable.BaseTable","@_attrs":{"@_sourceFile":"BaseTable.java"}},{"#text":"be.quodlibet.boxable.BoxableUtils","@_attrs":{"@_sourceFile":"BoxableUtils.java"}},{"#text":"be.quodlibet.boxable.Cell","@_attrs":{"@_sourceFile":"Cell.java"}},{"#text":"be.quodlibet.boxable.HorizontalAlignment","@_attrs":{"@_sourceFile":"HorizontalAlignment.java"}},{"#text":"be.quodlibet.boxable.ImageCell","@_attrs":{"@_sourceFile":"ImageCell.java"}},{"#text":"be.quodlibet.boxable.Paragraph","@_attrs":{"@_sourceFile":"Paragraph.java"}},{"#text":"be.quodlibet.boxable.Paragraph$1","@_attrs":{"@_sourceFile":"Paragraph.java"}},{"#text":"be.quodlibet.boxable.Paragraph$2","@_attrs":{"@_sourceFile":"Paragraph.java"}},{"#text":"be.quodlibet.boxable.Row","@_attrs":{"@_sourceFile":"Row.java"}},{"#text":"be.quodlibet.boxable.Table$1","@_attrs":{"@_sourceFile":"Table.java"}},{"#text":"be.quodlibet.boxable.TextType","@_attrs":{"@_sourceFile":"TextType.java"}},{"#text":"be.quodlibet.boxable.VerticalAlignment","@_attrs":{"@_sourceFile":"VerticalAlignment.java"}}]},"DependsUpon":{"Package":["be.quodlibet.boxable.image","be.quodlibet.boxable.line","be.quodlibet.boxable.page","be.quodlibet.boxable.text","be.quodlibet.boxable.utils","com.google.common.base","java.awt","java.awt.geom","java.io","java.lang","java.util","org.apache.pdfbox.pdmodel","org.apache.pdfbox.pdmodel.common","org.apache.pdfbox.pdmodel.font","org.apache.pdfbox.pdmodel.graphics.image","org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination","org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline","org.apache.pdfbox.util"]},"UsedBy":{"Package":"be.quodlibet.boxable.datatable"}},{"@_attrs":{"@_name":"be.quodlibet.boxable.datatable"},"Stats":{"TotalClasses":1,"ConcreteClasses":1,"AbstractClasses":0,"Ca":0,"Ce":10,"A":0,"I":1,"D":0,"V":1},"AbstractClasses":"","ConcreteClasses":{"Class":{"#text":"be.quodlibet.boxable.datatable.DataTable","@_attrs":{"@_sourceFile":"DataTable.java"}}},"DependsUpon":{"Package":["be.quodlibet.boxable","be.quodlibet.boxable.line","be.quodlibet.boxable.utils","java.awt","java.io","java.lang","java.util","org.apache.commons.csv","org.apache.pdfbox.pdmodel","org.apache.pdfbox.pdmodel.font"]},"UsedBy":""},{"@_attrs":{"@_name":"be.quodlibet.boxable.image"},"Stats":{"TotalClasses":1,"ConcreteClasses":1,"AbstractClasses":0,"Ca":2,"Ce":6,"A":0,"I":0.75,"D":0.25,"V":1},"AbstractClasses":"","ConcreteClasses":{"Class":{"#text":"be.quodlibet.boxable.image.Image","@_attrs":{"@_sourceFile":"Image.java"}}},"DependsUpon":{"Package":["be.quodlibet.boxable.utils","java.awt.image","java.io","java.lang","org.apache.pdfbox.pdmodel","org.apache.pdfbox.pdmodel.graphics.image"]},"UsedBy":{"Package":["be.quodlibet.boxable","be.quodlibet.boxable.utils"]}},{"@_attrs":{"@_name":"be.quodlibet.boxable.line"},"Stats":{"TotalClasses":1,"ConcreteClasses":1,"AbstractClasses":0,"Ca":3,"Ce":3,"A":0,"I":0.5,"D":0.5,"V":1},"AbstractClasses":"","ConcreteClasses":{"Class":{"#text":"be.quodlibet.boxable.line.LineStyle","@_attrs":{"@_sourceFile":"LineStyle.java"}}},"DependsUpon":{"Package":["java.awt","java.lang","java.util"]},"UsedBy":{"Package":["be.quodlibet.boxable","be.quodlibet.boxable.datatable","be.quodlibet.boxable.utils"]}},{"@_attrs":{"@_name":"be.quodlibet.boxable.page"},"Stats":{"TotalClasses":2,"ConcreteClasses":1,"AbstractClasses":1,"Ca":1,"Ce":3,"A":0.5,"I":0.75,"D":0.25,"V":1},"AbstractClasses":{"Class":{"#text":"be.quodlibet.boxable.page.PageProvider","@_attrs":{"@_sourceFile":"PageProvider.java"}}},"ConcreteClasses":{"Class":{"#text":"be.quodlibet.boxable.page.DefaultPageProvider","@_attrs":{"@_sourceFile":"DefaultPageProvider.java"}}},"DependsUpon":{"Package":["java.lang","org.apache.pdfbox.pdmodel","org.apache.pdfbox.pdmodel.common"]},"UsedBy":{"Package":"be.quodlibet.boxable"}},{"@_attrs":{"@_name":"be.quodlibet.boxable.text"},"Stats":{"TotalClasses":5,"ConcreteClasses":4,"AbstractClasses":1,"Ca":1,"Ce":5,"A":0.2,"I":0.83,"D":0.03,"V":1},"AbstractClasses":{"Class":{"#text":"be.quodlibet.boxable.text.WrappingFunction","@_attrs":{"@_sourceFile":"WrappingFunction.java"}}},"ConcreteClasses":{"Class":[{"#text":"be.quodlibet.boxable.text.PipelineLayer","@_attrs":{"@_sourceFile":"PipelineLayer.java"}},{"#text":"be.quodlibet.boxable.text.Token","@_attrs":{"@_sourceFile":"Token.java"}},{"#text":"be.quodlibet.boxable.text.TokenType","@_attrs":{"@_sourceFile":"TokenType.java"}},{"#text":"be.quodlibet.boxable.text.Tokenizer","@_attrs":{"@_sourceFile":"Tokenizer.java"}}]},"DependsUpon":{"Package":["java.io","java.lang","java.util","java.util.regex","org.apache.pdfbox.pdmodel.font"]},"UsedBy":{"Package":"be.quodlibet.boxable"}},{"@_attrs":{"@_name":"be.quodlibet.boxable.utils"},"Stats":{"TotalClasses":4,"ConcreteClasses":4,"AbstractClasses":0,"Ca":3,"Ce":11,"A":0,"I":0.79,"D":0.21,"V":1},"AbstractClasses":"","ConcreteClasses":{"Class":[{"#text":"be.quodlibet.boxable.utils.FontUtils","@_attrs":{"@_sourceFile":"FontUtils.java"}},{"#text":"be.quodlibet.boxable.utils.FontUtils$FontMetrics","@_attrs":{"@_sourceFile":"FontUtils.java"}},{"#text":"be.quodlibet.boxable.utils.ImageUtils","@_attrs":{"@_sourceFile":"ImageUtils.java"}},{"#text":"be.quodlibet.boxable.utils.PDStreamUtils","@_attrs":{"@_sourceFile":"PDStreamUtils.java"}}]},"DependsUpon":{"Package":["be.quodlibet.boxable.image","be.quodlibet.boxable.line","java.awt","java.io","java.lang","java.util","javax.imageio","org.apache.pdfbox.pdmodel","org.apache.pdfbox.pdmodel.common","org.apache.pdfbox.pdmodel.font","org.slf4j"]},"UsedBy":{"Package":["be.quodlibet.boxable","be.quodlibet.boxable.datatable","be.quodlibet.boxable.image"]}},{"@_attrs":{"@_name":"com.jfoenix.controls.behavior"},"Stats":{"TotalClasses":4,"ConcreteClasses":4,"AbstractClasses":0,"Ca":1,"Ce":9,"A":0,"I":0.9,"D":0.1,"V":1},"AbstractClasses":"","ConcreteClasses":{"Class":[{"#text":"com.jfoenix.controls.behavior.JFXColorPickerBehavior","@_attrs":{"@_sourceFile":"JFXColorPickerBehavior.java"}},{"#text":"com.jfoenix.controls.behavior.JFXDatePickerBehavior","@_attrs":{"@_sourceFile":"JFXDatePickerBehavior.java"}},{"#text":"com.jfoenix.controls.behavior.JFXTimePickerBehavior","@_attrs":{"@_sourceFile":"JFXTimePickerBehavior.java"}},{"#text":"com.jfoenix.controls.behavior.JFXTreeTableCellBehavior","@_attrs":{"@_sourceFile":"JFXTreeTableCellBehavior.java"}}]},"DependsUpon":{"Package":["com.jfoenix.controls","com.jfoenix.skins","com.sun.javafx.scene.control.behavior","java.lang","java.util","javafx.geometry","javafx.scene","javafx.scene.control","javafx.scene.input"]},"UsedBy":{"Package":"com.jfoenix.skins"}},{"@_attrs":{"@_name":"org.apache.derby.mbeans"},"Stats":{"TotalClasses":6,"ConcreteClasses":2,"AbstractClasses":4,"Ca":5,"Ce":5,"A":0.67,"I":0.5,"D":0.17,"V":1},"AbstractClasses":{"Class":[{"#text":"org.apache.derby.mbeans.CacheManagerMBean","@_attrs":{"@_sourceFile":"Unknown"}},{"#text":"org.apache.derby.mbeans.JDBCMBean","@_attrs":{"@_sourceFile":"Unknown"}},{"#text":"org.apache.derby.mbeans.ManagementMBean","@_attrs":{"@_sourceFile":"Unknown"}},{"#text":"org.apache.derby.mbeans.VersionMBean","@_attrs":{"@_sourceFile":"Unknown"}}]},"ConcreteClasses":{"Class":[{"#text":"org.apache.derby.mbeans.Management","@_attrs":{"@_sourceFile":"Unknown"}},{"#text":"org.apache.derby.mbeans.Management$1","@_attrs":{"@_sourceFile":"Unknown"}}]},"DependsUpon":{"Package":["java.lang","java.security","java.sql","org.apache.derby.iapi.reference","org.apache.derby.iapi.services.monitor"]},"UsedBy":{"Package":["org.apache.derby.iapi.services.info","org.apache.derby.iapi.services.jmx","org.apache.derby.impl.services.cache","org.apache.derby.impl.services.jmx","org.apache.derby.jdbc"]}}]
+
+        const pointDictionary = {};
+
+        const renderDetailsFor = (packageName) => {
+          const parent = document.getElementById("package-info")
+          parent.textContent = '';
+
+          if (!packageName) {
+            parent.textContent = 'No results found. Please specify a valid partial or complete package name.';
+            return;
+          }
+
+          const point = pointDictionary[packageName];
+
+          const h3 = document.createElement("h3");
+          h3.textContent = packageName;
+          const total = document.createElement("p");
+          total.textContent = "Total Classes: " + point.Stats.TotalClasses;
+          const abstract = document.createElement("p");
+          abstract.textContent = "Abstract Classes: " + point.Stats.AbstractClasses;
+          const concrete = document.createElement("p");
+          concrete.textContent = "Concrete Classes (or Interfaces): " + point.Stats.ConcreteClasses;
+
+          const ca = document.createElement("p");
+          ca.textContent = "Ca - Afferent Couplings: " + point.Stats.Ca;
+          const ce = document.createElement("p");
+          ce.textContent = "Ce - Efferent Couplings: " + point.Stats.Ce;
+
+          const abstractness = document.createElement("p");
+          abstractness.textContent = "Abstractness: " + point.Stats.A;
+          const instability = document.createElement("p");
+          instability.textContent = "Instability: " + point.Stats.I;
+
+          const distance = document.createElement("p");
+          distance.textContent = "Distance from Main Sequence: " + point.Stats.D;
+
+          const usedByTitle = document.createElement("h4");
+          usedByTitle.textContent = "Used By (Afferent couplings):";
+          const usedByList = document.createElement("ul");
+          const usedByCollection = typeof point.UsedBy.Package === "string"
+          ? [point.UsedBy.Package]
+          : point.UsedBy.Package;
+          (usedByCollection || []).forEach((usedBy) => {
+            const li = document.createElement("li")
+            li.textContent = usedBy;
+            usedByList.appendChild(li);
+          })
+
+          const dependsUponTitle = document.createElement("h4");
+          dependsUponTitle.textContent = "Depends upon (Efferent couplings):";
+          const dependsUponList = document.createElement("ul");
+          const dependsUponCollection = typeof point.DependsUpon.Package === "string"
+          ? [point.DependsUpon.Package]
+          : point.DependsUpon.Package;
+
+          (dependsUponCollection || []).forEach((dependsUpon) => {
+            const li = document.createElement("li")
+            li.textContent = dependsUpon;
+            dependsUponList.appendChild(li);
+          })
+
+          parent.appendChild(h3);
+          parent.appendChild(total);
+          parent.appendChild(abstract);
+          parent.appendChild(concrete);
+          parent.appendChild(ca);
+          parent.appendChild(ce);
+          parent.appendChild(abstractness);
+          parent.appendChild(instability);
+          parent.appendChild(distance);
+          parent.appendChild(usedByTitle);
+          parent.appendChild(usedByList);
+          parent.appendChild(dependsUponTitle);
+          parent.appendChild(dependsUponList);
+        }
+
+        const showDetails = (e) => {
+          const packageName = e.target.getAttribute("data-tooltip");
+          renderDetailsFor(packageName);
+        }
+
+        const search = (input) => {
+          if(event.keyCode === 13) {
+              const found = Object.keys(pointDictionary).find(k => k.includes(input.value));
+              renderDetailsFor(found)
+            }
+        };
+
+        const mainReport = document.getElementById("main-report");
+
+        points.forEach((point) => {
+          const pointDiv = document.createElement("div");
+          pointDiv.classList.add("point");
+          pointDiv.style.left = 700 * point.Stats.I
+          pointDiv.style.top =  694 - (700 * point.Stats.A)
+          pointDiv.setAttribute("data-tooltip", point['@_attrs']['@_name']);
+          pointDiv.addEventListener("click", showDetails);
+          mainReport.appendChild(pointDiv);
+
+          pointDictionary[point['@_attrs']['@_name']] = point;
+        });
+
+
+        const sum = points.reduce((acc, point) => acc + point.Stats.D, 0);
+
+        const averageDistance = (sum / points.length) || 0;
+        const medianDistance = points.sort((a, b) => a.Stats.D - b.Stats.D)[Math.floor(points.length/2)].Stats.D;
+        document.getElementById("average").textContent = averageDistance;
+        document.getElementById("median").textContent = medianDistance;
+  </script>
+</html>
