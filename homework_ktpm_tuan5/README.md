@@ -1,41 +1,27 @@
-## HomeWork 5 -- CODE MINH HỌA CHO GỬI VÀ NHẬN BẰNG JAVA
+## HOME-WORK 5 -- CODE MINH HỌA CHO GỬI VÀ NHẬN BẰNG JAVA<br>
 
-## CÁC BƯỚC THỰC HIỆN
-## BƯỚC 1:
-![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan4/images/MainSequence.png?raw=true)<br>
+## CÁC BƯỚC THỰC HIỆN<br>
 
-## class OpenHtmlFileInBrowser chứa phương thức để mở file html tự động <br>
+## BƯỚC 1: TẢI ACTIVE-MQ<br>
 
-![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan4/images/OpenHtmlFileInBrowser.png?raw=true)<br>
+![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan5/images/dowload_active_mq.png?raw=true)<br>
 
-## class PartXMLProject chứa phương thức để chuyển đổi project thành file xml <br>
+## BƯỚC 2: CẤU HÌNH ACTIVE-MQ <br>
 
-![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan4/images/PartXMLProject.png?raw=true)<br>
+![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan5/images/cauhinh_active_mq.png?raw=true)<br>
 
-## class RunCMD chứa phương thức để chạy lệnh cmd <br>
+## BƯỚC 3: CHẠY ACTIVE-MQ <br>
 
-![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan4/images/RunCMD.png?raw=true)<br>
+![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan5/images/run_active_mq.png?raw=true)<br>
 
-## class ViewInformationProject chứa phương thức để xem thông tin project dưới dạng swingUI <br>
+## BƯỚC 4: CHẠY PHƯƠNG THỨC ĐỂ NHẬN TIN NHẮN LIÊN TỤC <br>
 
-![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan4/images/ViewInformationProject.png?raw=true)<br>
+![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan5/images/run_receiver.png?raw=true)<br>
 
-## class RunProject nơi chạy chương trình <br>
+## BƯỚC 5: CHẠY PHƯƠNG THỨC GỬI TIN NHẮN VỚI NỘI DUNG - CHÀO CẬU NHA <br>
 
-![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan4/images/RunProject.png?raw=true)<br>
+![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan5/images/run_sender.png?raw=true)<br>
 
-## Hưỡng đãn chạy chương trình, bước 1: <br>
+## KẾT QUẢ CỦA VIỆC GỬI TIN NHẮN <br>
 
-![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan4/images/demoRunProject1.png?raw=true)<br>
-
-## Hưỡng đãn chạy chương trình, bước 2: <br>
-
-![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan4/images/demoRunProject2.png?raw=true)<br>
-
-## Hưỡng đãn chạy chương trình, bước 3: <br>
-
-![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan4/images/demoRunProject3.png?raw=true)<br>
-
-## Hưỡng đãn chạy chương trình, bước 4: <br>
-
-![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan4/images/demoRunProject4.png?raw=true)<br>
+![Ảnh trực tuyến](https://github.com/CreativePhu/homework_ktpm/blob/master/homework_ktpm_tuan5/images/result.png?raw=true)<br>
